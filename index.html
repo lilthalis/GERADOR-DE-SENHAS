@@ -4,6 +4,21 @@
   <meta charset="UTF-8">
   <title>Gerador de Senhas</title>
   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Gerador de Senhas 🔐</h1>
+
+    <div class="senha-box">
+      <input type="password" id="senha" readonly>
+      <button id="mostrar" onclick="toggleSenha()">👁</button>
+      <button onclick="copiarSenha()">📋</button>
+    </div>
+
+    <button onclick="gerarSenha()">Gerar Senha</button>
+    <p id="msg-copiado"></p>
+  </div>
+
   <script>
     function gerarSenha() {
       const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*';
@@ -16,11 +31,29 @@
       }
 
       document.getElementById('senha').value = senha;
+      document.getElementById('senha').type = "password";
+      document.getElementById('msg-copiado').innerText = '';
+    }
+
+    function copiarSenha() {
+      const senhaInput = document.getElementById('senha');
+      senhaInput.select();
+      document.execCommand('copy');
+      document.getElementById('msg-copiado').innerText = 'Senha copiada!';
+    }
+
+    function toggleSenha() {
+      const senhaInput = document.getElementById('senha');
+      const mostrarBtn = document.getElementById('mostrar');
+
+      if (senhaInput.type === "password") {
+        senhaInput.type = "text";
+        mostrarBtn.innerText = "🙈";
+      } else {
+        senhaInput.type = "password";
+        mostrarBtn.innerText = "👁";
+      }
     }
   </script>
-</head>
-<body>
-  <div class="container">
-    <h1>Gerador de Senhas 🔐</h1>
-    <input type="text" id="senha" readonly>
-    <button onclick="gerarSenha()">Gerar Senha</but
+</body>
+</html>
