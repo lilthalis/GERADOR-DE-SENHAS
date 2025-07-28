@@ -1,53 +1,81 @@
+/* style.css */
 body {
-  font-family: Arial, sans-serif;
-  background: #f1f1f1;
+  background-color: #121212;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
   display: flex;
-  height: 100vh;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 .container {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  background-color: #1f1f1f;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
   text-align: center;
+  width: 320px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .senha-box {
   display: flex;
   align-items: center;
-  margin: 20px 0;
-  gap: 5px;
+  background: #2b2b2b;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 15px;
 }
 
 #senha {
+  flex: 1;
+  padding: 12px;
   font-size: 16px;
-  padding: 10px;
-  width: 200px;
+  border: none;
+  background: transparent;
+  color: white;
+  outline: none;
 }
 
 .senha-box button {
-  font-size: 18px;
-  padding: 10px;
+  background-color: transparent;
+  border: none;
+  color: #aaa;
+  padding: 12px;
   cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s;
 }
 
-button {
-  background: #4CAF50;
+.senha-box button:hover {
+  color: #fff;
+}
+
+button#gerar {
+  background-color: #6c63ff;
   color: white;
   border: none;
-  border-radius: 5px;
-  transition: background 0.3s;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
 }
 
-button:hover {
-  background: #45a049;
+button#gerar:hover {
+  background-color: #5952e3;
 }
 
 #msg-copiado {
-  color: green;
-  font-size: 14px;
   margin-top: 10px;
+  font-size: 14px;
+  color: #62ff9e;
 }
+
