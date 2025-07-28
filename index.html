@@ -2,20 +2,25 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gerador de Senhas</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    function gerarSenha() {
+      const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*';
+      let senha = '';
+      const tamanho = 12;
+
+      for (let i = 0; i < tamanho; i++) {
+        const index = Math.floor(Math.random() * caracteres.length);
+        senha += caracteres[index];
+      }
+
+      document.getElementById('senha').value = senha;
+    }
+  </script>
 </head>
 <body>
   <div class="container">
-    <h1>🔒 Gerador de Senhas</h1>
-    <div class="password-box">
-      <input type="text" id="password" readonly>
-      <button onclick="generatePassword()">Gerar</button>
-    </div>
-    <p class="dica">Clique no botão para gerar uma senha segura.</p>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    <h1>Gerador de Senhas 🔐</h1>
+    <input type="text" id="senha" readonly>
+    <button onclick="gerarSenha()">Gerar Senha</but
